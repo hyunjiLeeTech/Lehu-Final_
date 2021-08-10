@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useState } from "react";
 
 import Title from "../General/Title";
 import "./Dashboard.css";
@@ -75,7 +73,7 @@ const Dashboard = (props) => {
             />
           </div>
         </div>
-        <div className="col-md-6">
+        <div className="col-md-12">
           <div className="control">
             <label htmlFor="email" className="form-label">
               Email
@@ -85,20 +83,6 @@ const Dashboard = (props) => {
               className="form-control"
               id="email"
               value={profile.email}
-              disabled
-            />
-          </div>
-        </div>
-        <div className="col-md-6">
-          <div className="control">
-            <label htmlFor="password" className="form-label">
-              Password
-            </label>
-            <input
-              type="password"
-              className="form-control"
-              id="password"
-              value={profile.password}
               disabled
             />
           </div>

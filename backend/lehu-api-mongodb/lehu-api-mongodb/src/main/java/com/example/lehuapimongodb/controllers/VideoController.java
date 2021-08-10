@@ -17,7 +17,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-@CrossOrigin(origins="https://lehu-final.herokuapp.com/")
+//@CrossOrigin(origins="https://lehu-final.herokuapp.com/")
+@CrossOrigin(origins="http://localhost:3000/")
 @RestController
 public class VideoController {
     @Autowired
