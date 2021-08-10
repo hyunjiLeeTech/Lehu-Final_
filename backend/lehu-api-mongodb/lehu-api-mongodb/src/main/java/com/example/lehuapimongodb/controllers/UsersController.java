@@ -17,8 +17,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-//@CrossOrigin(origins="https://lehu-final.herokuapp.com/")
-@CrossOrigin(origins="http://localhost:3000/")
+@CrossOrigin(origins="https://lehu-final.herokuapp.com/")
+//@CrossOrigin(origins="http://localhost:3000/")
 @RestController
 public class UsersController
 

@@ -12,14 +12,18 @@ const HomePage = () => {
   const [isLoadingShow, setIsLoadingShow] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/videos/shows/isFeatured?isFeatured=true")
+    fetch(
+      "https://lehu-final-backend.herokuapp.com/videos/shows/isFeatured?isFeatured=true"
+    )
       .then((res) => res.json())
       .then((videos) => {
         setFeaturedShows(videos.body);
         setIsLoadingShow(false);
       });
 
-    fetch("http://localhost:5000/videos/movies/isFeatured?isFeatured=true")
+    fetch(
+      "https://lehu-final-backend.herokuapp.com/videos/movies/isFeatured?isFeatured=true"
+    )
       .then((res) => res.json())
       .then((videos) => {
         setFeaturedMovies(videos.body);
