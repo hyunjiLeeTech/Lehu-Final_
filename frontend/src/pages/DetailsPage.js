@@ -12,7 +12,7 @@ const DetailsPage = ({ setPopupTitle, setPopupContent, togglePopup }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`https://lehu-final-backend.herokuapp.com/videos/${id}`)
+    fetch(`http://localhost:5000/videos/${id}`)
       .then((res) => res.json())
       .then((video) => {
         setVideo(video.body[0]);

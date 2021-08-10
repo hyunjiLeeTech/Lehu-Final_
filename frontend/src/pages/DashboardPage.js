@@ -11,11 +11,7 @@ const DashboardPage = () => {
 
   useEffect(() => {
     console.log("profile starts");
-    fetch(
-      `https://lehu-final-backend.herokuapp.com/users/${localStorage.getItem(
-        "lehuIdInfo"
-      )}`
-    )
+    fetch(`http://localhost:5000/users/${localStorage.getItem("lehuIdInfo")}`)
       .then((res) => res.json())
       .then((profile) => {
         setProfile(profile.body[0]);

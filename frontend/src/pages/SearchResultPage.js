@@ -12,9 +12,7 @@ const SearchResultPage = () => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    fetch(
-      `https://lehu-final-backend.herokuapp.com/videos/title?title=${title}`
-    )
+    fetch(`http://localhost:5000/videos/title?title=${title}`)
       .then((res) => res.json())
       .then((video) => {
         setVideos(video.body);

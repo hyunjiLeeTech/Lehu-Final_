@@ -15,7 +15,7 @@ const Login = ({ setPopupTitle, setPopupContent, togglePopup }) => {
   const submitForm = (e) => {
     e.preventDefault();
 
-    fetch("https://lehu-final-backend.herokuapp.com/auth", {
+    fetch("http://localhost:5000/auth", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

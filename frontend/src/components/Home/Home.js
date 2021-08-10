@@ -13,16 +13,17 @@ const Home = (props) => {
     <div className="container">
       <Hero />
       <div>
-        <textarea
+        <input
+          type="text"
           placeholder="Search book by title"
-          className="searchBar"
+          className="searchBar form-control"
           name="title"
           id="title"
           value={title}
           onChange={(event) => {
             setTitle(event.target.value);
           }}
-        ></textarea>
+        ></input>
         <Link className="featureTitleLink" to={"/search/" + title}>
           <div className="justify-content-center searchBtnContainer">
             <input type="submit" value="Search" className="searchBtn" />

@@ -10,7 +10,7 @@ const MovieListPage = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://lehu-final-backend.herokuapp.com/videos/movies")
+    fetch("http://localhost:5000/videos/movies")
       .then((res) => res.json())
       .then((videos) => {
         setMovies(videos.body);

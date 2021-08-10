@@ -34,7 +34,7 @@ const Registration = ({ setPopupTitle, setPopupContent, togglePopup }) => {
       setPopupContent("Please right correct year. 1901-2099 allow to enter");
       togglePopup();
     } else {
-      fetch("https://lehu-final-backend.herokuapp.com/users", {
+      fetch("http://localhost:5000/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
