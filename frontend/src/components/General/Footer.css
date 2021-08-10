@@ -1,0 +1,14 @@
+.footer {
+  background-color: rgb(59, 58, 65);
+  width: 100%;
+}
+
+a#footer-link {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .footer-item {
+    font-size: 10px;
+  }
+}

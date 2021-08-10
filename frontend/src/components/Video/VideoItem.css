@@ -1,0 +1,31 @@
+.videoTitle {
+  margin-top: 10px;
+  color: white;
+}
+
+.videoContainer {
+  margin: 20px 0px;
+}
+
+.author {
+  margin-top: 5px;
+}
+
+.image {
+  width: 150px;
+  height: 230px;
+}
+
+.videoLink,
+.videoLink:hover,
+.videoLink:active {
+  text-decoration: none;
+  color: black;
+}
+
+@media (max-width: 280px) {
+  .image {
+    width: 40vw;
+    height: 25vh;
+  }
+}

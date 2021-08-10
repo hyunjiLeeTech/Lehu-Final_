@@ -1,0 +1,89 @@
+.detailContainer {
+  margin-top: 50px;
+}
+
+.synopsis,
+.overview,
+.title {
+  color: white;
+}
+
+.title {
+  text-align: left;
+}
+
+.synopsis {
+  font-size: 1.8rem;
+}
+
+.overview {
+  font-size: 1.4rem;
+}
+
+.poster {
+  width: 250px;
+  height: auto;
+}
+
+.overviewContainer {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.button {
+  width: 200px;
+  height: 70px;
+  font-size: 20px;
+  margin-top: 20px;
+  background-color: #5a597a;
+  color: white;
+}
+
+.buttonMargin {
+  margin-right: 50px;
+}
+
+@media (max-width: 768px) {
+  .detailContainer {
+    margin-top: 50px;
+  }
+  .poster {
+    position: relative;
+    width: 32vw;
+    height: auto;
+  }
+
+  .bigPoster {
+    width: 90vw;
+  }
+
+  .overviewContainer {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .button {
+    width: 45vw;
+    height: 8vh;
+    margin-top: 1vh;
+    background-color: #5a597a;
+    color: white;
+    font-size: 1rem;
+  }
+
+  .buttonMargin {
+    margin-right: 50px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .synopsis {
+    font-size: 1.5rem;
+  }
+
+  .overview {
+    font-size: 1rem;
+  }
+}

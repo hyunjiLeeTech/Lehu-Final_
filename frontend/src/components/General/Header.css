@@ -1,0 +1,19 @@
+button.btn {
+  background-color: none;
+  border: none;
+  color: white;
+}
+
+button.btn:hover {
+  border: none;
+  color: white;
+}
+
+.logout {
+  color: white;
+  cursor: pointer;
+}
+
+.logo {
+  width: 120px;
+}

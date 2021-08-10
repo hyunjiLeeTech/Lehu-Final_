@@ -1,0 +1,10 @@
+.title {
+  margin-top: 10px;
+  font-size: 4em;
+  font-weight: bold;
+  font-family: "Lato";
+}
+
+.black {
+  color: black !important;
+}

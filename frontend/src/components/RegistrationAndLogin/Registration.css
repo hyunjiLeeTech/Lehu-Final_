@@ -1,0 +1,13 @@
+.registrationContainer {
+  width: 1000px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+@media (max-width: 768px) {
+  .registrationContainer {
+    width: 90vw;
+    margin: 0 auto;
+    background-color: white;
+  }
+}

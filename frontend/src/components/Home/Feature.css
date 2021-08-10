@@ -1,0 +1,38 @@
+.featureContainer {
+  text-align: center;
+  width: 150px;
+  height: auto;
+  margin: 15px 50px 15px 0px;
+}
+
+.featureImg {
+  width: 160px;
+  height: 210px;
+}
+
+.section {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 25px;
+  color: white;
+}
+
+.featureTitleContainer {
+  margin-top: 10px;
+}
+
+.featureTitle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: X;
+  max-height: X * 1;
+  text-decoration: none;
+}
+
+.featureTitleLink,
+.featureTitleLink:hover,
+.featureTitleLink:active {
+  text-decoration: none;
+  color: white;
+}

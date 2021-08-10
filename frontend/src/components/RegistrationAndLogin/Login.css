@@ -1,0 +1,13 @@
+.loginContainer {
+  width: 700px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+@media (max-width: 768px) {
+  .loginContainer {
+    width: 90vw;
+    margin: 0 auto;
+    background-color: white;
+  }
+}
