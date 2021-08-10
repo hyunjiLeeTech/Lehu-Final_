@@ -26,7 +26,15 @@ public class VideoController {
 
     @GetMapping("/videos")
     public ResponseEntity getVideos(){
-        var customizedResponse = new CustomizedResponse(0, "A list of videos", service.getVideos());
+        CustomizedResponse customizedResponse = null;
+
+        try{
+            customizedResponse = new CustomizedResponse(0, "A list of videos", service.getVideos());
+        }catch(Exception e){
+            customizedResponse = new CustomizedResponse(1, e.getMessage(), null);
+
+            return new ResponseEntity(customizedResponse, HttpStatus.NOT_FOUND);
+        }
 
         return new ResponseEntity(customizedResponse, HttpStatus.OK);
     }
@@ -49,44 +57,107 @@ public class VideoController {
 
     @GetMapping("/videos/movies")
     public ResponseEntity getVideosMovie(){
-        var customizedResponse = new CustomizedResponse(0, " A list of movies", service.getMovieVideos());
+        CustomizedResponse customizedResponse = null;
+
+        try{
+            customizedResponse = new CustomizedResponse(0, " A list of movies", service.getMovieVideos());
+        }catch(Exception e){
+            customizedResponse = new CustomizedResponse(1, e.getMessage(), null);
+
+            return new ResponseEntity(customizedResponse, HttpStatus.NOT_FOUND);
+        }
+
         return new ResponseEntity(customizedResponse, HttpStatus.OK);
     }
 
 
     @GetMapping("/videos/shows")
     public ResponseEntity getVideosShow(){
-        var customizedResponse = new CustomizedResponse(0, " A list of shows", service.getShowVideos());
+        CustomizedResponse customizedResponse = null;
+
+        try{
+            customizedResponse = new CustomizedResponse(0, " A list of shows", service.getShowVideos());
+        }catch(Exception e){
+            customizedResponse = new CustomizedResponse(1, e.getMessage(), null);
+
+            return new ResponseEntity(customizedResponse, HttpStatus.NOT_FOUND);
+        }
+
         return new ResponseEntity(customizedResponse, HttpStatus.OK);
     }
 
     @GetMapping("/videos/title")
     public ResponseEntity getVideosByTitle(@RequestParam(value="title") String t){
-        var customizedResponse = new CustomizedResponse(0, " A list of videos with string", service.getVideosWithTitle(t));
+        CustomizedResponse customizedResponse = null;
+
+        try{
+            customizedResponse = new CustomizedResponse(0, " A list of videos with string", service.getVideosWithTitle(t));
+        }catch(Exception e){
+            customizedResponse = new CustomizedResponse(1, e.getMessage(), null);
+
+            return new ResponseEntity(customizedResponse, HttpStatus.NOT_FOUND);
+        }
+
         return new ResponseEntity(customizedResponse, HttpStatus.OK);
     }
 
     @GetMapping("/videos/movies/title")
     public ResponseEntity getMoviesByTitle(@RequestParam(value="title") String t){
-        var customizedResponse = new CustomizedResponse(0, " A list of movies with string", service.getMoviesWithTitle(t));
+        CustomizedResponse customizedResponse = null;
+
+        try{
+            customizedResponse = new CustomizedResponse(0, " A list of movies with string", service.getMoviesWithTitle(t));
+        }catch(Exception e){
+            customizedResponse = new CustomizedResponse(1, e.getMessage(), null);
+
+            return new ResponseEntity(customizedResponse, HttpStatus.NOT_FOUND);
+        }
+
         return new ResponseEntity(customizedResponse, HttpStatus.OK);
     }
 
     @GetMapping("/videos/shows/title")
     public ResponseEntity getShowsByTitle(@RequestParam(value="title") String t){
-        var customizedResponse = new CustomizedResponse(0, " A list of shows with string", service.getShowsWithTitle(t));
+        CustomizedResponse customizedResponse = null;
+
+        try{
+            customizedResponse = new CustomizedResponse(0, " A list of shows with string", service.getShowsWithTitle(t));
+        }catch(Exception e){
+            customizedResponse = new CustomizedResponse(1, e.getMessage(), null);
+
+            return new ResponseEntity(customizedResponse, HttpStatus.NOT_FOUND);
+        }
+
         return new ResponseEntity(customizedResponse, HttpStatus.OK);
     }
 
     @GetMapping("/videos/movies/isFeatured")
     public ResponseEntity getFeaturedMovies(@RequestParam(value="isFeatured") String f){
-        var customizedResponse = new CustomizedResponse(0, " A list of featured movies", service.getFeaturedMovies(f));
+        CustomizedResponse customizedResponse = null;
+
+        try{
+            customizedResponse = new CustomizedResponse(0, " A list of featured movies", service.getFeaturedMovies(f));
+        }catch(Exception e){
+            customizedResponse = new CustomizedResponse(1, e.getMessage(), null);
+
+            return new ResponseEntity(customizedResponse, HttpStatus.NOT_FOUND);
+        }
+
         return new ResponseEntity(customizedResponse, HttpStatus.OK);
     }
 
     @GetMapping("/videos/shows/isFeatured")
     public ResponseEntity getFeaturedShows(@RequestParam(value="isFeatured") String f){
-        var customizedResponse = new CustomizedResponse(0, " A list of featured shows", service.getFeaturedShows(f));
+        CustomizedResponse customizedResponse = null;
+
+        try{
+            customizedResponse = new CustomizedResponse(0, " A list of featured shows", service.getFeaturedShows(f));
+        }catch(Exception e){
+            customizedResponse = new CustomizedResponse(1, e.getMessage(), null);
+
+            return new ResponseEntity(customizedResponse, HttpStatus.NOT_FOUND);
+        }
+
         return new ResponseEntity(customizedResponse, HttpStatus.OK);
     }
 

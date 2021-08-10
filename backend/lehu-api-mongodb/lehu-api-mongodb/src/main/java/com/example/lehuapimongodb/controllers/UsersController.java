@@ -30,19 +30,33 @@ public class UsersController
     @GetMapping("/users")
     public ResponseEntity getUsers()
     {
+        CustomizedResponse customizedResponse = null;
 
-        var response = new CustomizedResponse(0, " A list of all users ", userService.getUsers());
+        try{
+            customizedResponse = new CustomizedResponse(0, " A list of all users ", userService.getUsers());
+        }catch(Exception e){
+            customizedResponse = new CustomizedResponse(1, e.getMessage(), null);
 
-        return new ResponseEntity( response, HttpStatus.OK);
+            return new ResponseEntity(customizedResponse, HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity(customizedResponse, HttpStatus.OK);
     }
 
     @GetMapping("/users/{id}")
     public ResponseEntity getAUsers(@PathVariable("id") String id)
     {
+        CustomizedResponse customizedResponse = null;
 
-        var response = new CustomizedResponse(0, " User with id  : " + id, Collections.singletonList(userService.getAUser(id)));
+        try{
+            customizedResponse = new CustomizedResponse(0, " User with id  : " + id, Collections.singletonList(userService.getAUser(id)));
+        }catch(Exception e){
+            customizedResponse = new CustomizedResponse(1, e.getMessage(), null);
 
-        return new ResponseEntity( response, HttpStatus.OK);
+            return new ResponseEntity(customizedResponse, HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity(customizedResponse, HttpStatus.OK);
 
     }
 
