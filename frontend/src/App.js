@@ -77,10 +77,10 @@ function App() {
               />
             )}
           />
-          <Route
-            exact
-            path="/registration"
-            render={() => (
+          <Route path="/registration">
+            {localStorage.getItem("lehuIsLogin") === "true" ? (
+              <Redirect to="/" />
+            ) : (
               <RegistrationPage
                 setPopupTitle={setPopupTitle}
                 setPopupContent={setPopupContent}
@@ -88,11 +88,12 @@ function App() {
                 isPopupOpen={isPopupOpen}
               />
             )}
-          />
-          <Route
-            exact
-            path="/login"
-            render={() => (
+          </Route>
+
+          <Route path="/login">
+            {localStorage.getItem("lehuIsLogin") === "true" ? (
+              <Redirect to="/" />
+            ) : (
               <LoginPage
                 setPopupTitle={setPopupTitle}
                 setPopupContent={setPopupContent}
@@ -100,7 +101,7 @@ function App() {
                 isPopupOpen={isPopupOpen}
               />
             )}
-          />
+          </Route>
         </Switch>
       </Router>
       {isPopupOpen && (
