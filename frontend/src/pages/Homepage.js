@@ -5,7 +5,7 @@ import Header from "../components/General/Header";
 import Footer from "../components/General/Footer";
 import Loading from "../components/General/Loading";
 
-const HomePage = () => {
+const HomePage = ({ setPopupTitle, setPopupContent, togglePopup }) => {
   const [featuredMovies, setFeaturedMovies] = useState([]);
   const [featuredShows, setFeaturedShows] = useState([]);
   const [isLoadingMovie, setIsLoadingMovie] = useState(true);
@@ -37,7 +37,13 @@ const HomePage = () => {
       {isLoadingMovie || isLoadingShow ? (
         <Loading />
       ) : (
-        <Home movies={featuredMovies} shows={featuredShows} />
+        <Home
+          movies={featuredMovies}
+          shows={featuredShows}
+          setPopupTitle={setPopupTitle}
+          setPopupContent={setPopupContent}
+          togglePopup={togglePopup}
+        />
       )}
       <Footer />
     </div>

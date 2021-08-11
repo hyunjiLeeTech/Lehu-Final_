@@ -1,41 +1,20 @@
-import { useState } from "react";
-
 import Title from "../General/Title";
 import VideoItem from "../Video/VideoItem";
+import SearchBar from "./SearchBar";
 
 import "./SearchResult.css";
 
 const SearchResult = (props) => {
-  const { pageTitle, content } = props;
-  const [title, setTitle] = useState("");
-
-  const onClickSearch = () => {
-    window.location.pathname = `search/${title}`;
-  };
+  const { pageTitle, content, setPopupTitle, setPopupContent, togglePopup } =
+    props;
 
   return (
     <div className="container searchResultContainer">
-      <div>
-        <input
-          type="text"
-          placeholder="Search book by title"
-          className="searchBar form-control"
-          name="title"
-          id="title"
-          value={title}
-          onChange={(event) => {
-            setTitle(event.target.value);
-          }}
-        ></input>
-        <div className="justify-content-center searchBtnContainer">
-          <input
-            type="submit"
-            value="Search"
-            className="searchBtn"
-            onClick={onClickSearch}
-          />
-        </div>
-      </div>
+      <SearchBar
+        setPopupTitle={setPopupTitle}
+        setPopupContent={setPopupContent}
+        togglePopup={togglePopup}
+      />
       <Title title={pageTitle} />
       <div className="row justify-content-first bookItemcontainer">
         {content.length === 0 ? (

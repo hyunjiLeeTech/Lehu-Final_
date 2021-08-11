@@ -42,7 +42,17 @@ function App() {
               />
             )}
           />
-          <Route exact path="/" render={() => <Homepage />} />
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <Homepage
+                setPopupTitle={setPopupTitle}
+                setPopupContent={setPopupContent}
+                togglePopup={togglePopup}
+              />
+            )}
+          />
           <Route exact path="/videos" render={() => <VideoListPage />} />
           <Route exact path="/MovieList" render={() => <MovieListPage />} />
           <Route exact path="/showList" render={() => <ShowListPage />} />
@@ -56,7 +66,13 @@ function App() {
           <Route
             exact
             path="/search/:title"
-            render={() => <SearchResultPage />}
+            render={() => (
+              <SearchResultPage
+                setPopupTitle={setPopupTitle}
+                setPopupContent={setPopupContent}
+                togglePopup={togglePopup}
+              />
+            )}
           />
           <Route
             exact
