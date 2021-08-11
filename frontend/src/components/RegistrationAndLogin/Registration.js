@@ -31,12 +31,12 @@ const Registration = ({ setPopupTitle, setPopupContent, togglePopup }) => {
       togglePopup();
     } else if (1901 > Number(dobSplit[2]) || Number(dobSplit[2]) > 2099) {
       setPopupTitle("Registration Failed");
-      setPopupContent("Please right correct year. 1901-2099 allow to enter");
+      setPopupContent("Please enter correct year. 1901-2099 allow to enter");
       togglePopup();
     } else if (dobSplit[0].length !== 2 || dobSplit[1].length !== 2) {
       setPopupTitle("Registration Failed");
       setPopupContent(
-        "Please right correct day or month format following the placeholder. For example, 1/1/2012 should be 01/01/2012"
+        "Please enter correct day or month format following the placeholder. For example, 1/1/2012 should be 01/01/2012"
       );
       togglePopup();
     } else {
