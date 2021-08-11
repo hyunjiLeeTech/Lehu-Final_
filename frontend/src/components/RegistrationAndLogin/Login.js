@@ -32,9 +32,6 @@ const Login = ({
         if (data.errCode === 0) {
           localStorage.setItem("lehuIdInfo", data.body[0].id);
           localStorage.setItem("lehuIsLogin", "true");
-          setPopupTitle("Login");
-          setPopupContent("Login Successfully done");
-          togglePopup();
           if (!isPopupOpen) {
             window.location.pathname = "/dashboard";
           }

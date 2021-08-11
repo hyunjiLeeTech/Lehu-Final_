@@ -6,12 +6,7 @@ import Title from "../General/Title";
 import "./Registration.css";
 import "./Button.css";
 
-const Registration = ({
-  setPopupTitle,
-  setPopupContent,
-  togglePopup,
-  isPopupOpen,
-}) => {
+const Registration = ({ setPopupTitle, setPopupContent, togglePopup }) => {
   const [user, setUser] = useState({
     firstName: "",
     lastName: "",
@@ -38,6 +33,12 @@ const Registration = ({
       setPopupTitle("Registration Failed");
       setPopupContent("Please right correct year. 1901-2099 allow to enter");
       togglePopup();
+    } else if (dobSplit[0].length !== 2 || dobSplit[1].length !== 2) {
+      setPopupTitle("Registration Failed");
+      setPopupContent(
+        "Please right correct day or month format following the placeholder. For example, 1/1/2012 should be 01/01/2012"
+      );
+      togglePopup();
     } else {
       fetch("https://lehu-final-backend.herokuapp.com/users", {
         method: "POST",
@@ -52,9 +53,6 @@ const Registration = ({
             setPopupTitle("Registration Success");
             setPopupContent(`Welcome! Your account is successfully added!`);
             togglePopup();
-            if (!isPopupOpen) {
-              window.location.pathname = "/login";
-            }
           } else {
             setPopupTitle("Registration Failed");
             setPopupContent(data.message);
