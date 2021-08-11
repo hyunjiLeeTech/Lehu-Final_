@@ -21,8 +21,8 @@ import Popup from "./components/General/Popup";
 
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [popupTitle, setPopupTitle] = useState(false);
-  const [popupContent, setPopupContent] = useState(false);
+  const [popupTitle, setPopupTitle] = useState("");
+  const [popupContent, setPopupContent] = useState("");
 
   const togglePopup = async () => {
     setIsPopupOpen(!isPopupOpen);
@@ -39,6 +39,7 @@ function App() {
                 setPopupTitle={setPopupTitle}
                 setPopupContent={setPopupContent}
                 togglePopup={togglePopup}
+                isPopupOpen={isPopupOpen}
               />
             )}
           />
@@ -50,6 +51,7 @@ function App() {
                 setPopupTitle={setPopupTitle}
                 setPopupContent={setPopupContent}
                 togglePopup={togglePopup}
+                isPopupOpen={isPopupOpen}
               />
             )}
           />
@@ -71,6 +73,7 @@ function App() {
                 setPopupTitle={setPopupTitle}
                 setPopupContent={setPopupContent}
                 togglePopup={togglePopup}
+                isPopupOpen={isPopupOpen}
               />
             )}
           />
@@ -82,6 +85,7 @@ function App() {
                 setPopupTitle={setPopupTitle}
                 setPopupContent={setPopupContent}
                 togglePopup={togglePopup}
+                isPopupOpen={isPopupOpen}
               />
             )}
           />
@@ -93,6 +97,7 @@ function App() {
                 setPopupTitle={setPopupTitle}
                 setPopupContent={setPopupContent}
                 togglePopup={togglePopup}
+                isPopupOpen={isPopupOpen}
               />
             )}
           />

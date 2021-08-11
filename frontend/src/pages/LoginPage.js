@@ -2,7 +2,12 @@ import LogIn from "../components/RegistrationAndLogin/Login";
 import Header from "../components/General/Header";
 import Footer from "../components/General/Footer";
 
-const LogInPage = ({ setPopupTitle, setPopupContent, togglePopup }) => {
+const LogInPage = ({
+  setPopupTitle,
+  setPopupContent,
+  togglePopup,
+  isPopupOpen,
+}) => {
   return (
     <div>
       <Header />
@@ -10,6 +15,7 @@ const LogInPage = ({ setPopupTitle, setPopupContent, togglePopup }) => {
         setPopupTitle={setPopupTitle}
         setPopupContent={setPopupContent}
         togglePopup={togglePopup}
+        isPopupOpen={isPopupOpen}
       />
       <Footer />
     </div>

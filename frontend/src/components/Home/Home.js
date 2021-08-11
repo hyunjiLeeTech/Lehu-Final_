@@ -5,7 +5,14 @@ import SearchBar from "../SearchResult/SearchBar";
 import "./Home.css";
 
 const Home = (props) => {
-  const { movies, shows, setPopupTitle, setPopupContent, togglePopup } = props;
+  const {
+    movies,
+    shows,
+    setPopupTitle,
+    setPopupContent,
+    togglePopup,
+    isPopupOpen,
+  } = props;
 
   return (
     <div className="container">
@@ -14,6 +21,7 @@ const Home = (props) => {
         setPopupTitle={setPopupTitle}
         setPopupContent={setPopupContent}
         togglePopup={togglePopup}
+        isPopupOpen={isPopupOpen}
       />
 
       <Feature videos={movies} section="Featured Movie" />

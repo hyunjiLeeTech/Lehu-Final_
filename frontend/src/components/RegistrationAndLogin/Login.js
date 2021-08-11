@@ -6,7 +6,12 @@ import Title from "../General/Title";
 import "./Button.css";
 import "./Login.css";
 
-const Login = ({ setPopupTitle, setPopupContent, togglePopup }) => {
+const Login = ({
+  setPopupTitle,
+  setPopupContent,
+  togglePopup,
+  isPopupOpen,
+}) => {
   const [login, setLogin] = useState({
     email: "",
     password: "",
@@ -30,10 +35,12 @@ const Login = ({ setPopupTitle, setPopupContent, togglePopup }) => {
           setPopupTitle("Login");
           setPopupContent("Login Successfully done");
           togglePopup();
-          window.location.pathname = "/dashboard";
+          if (!isPopupOpen) {
+            window.location.pathname = "/dashboard";
+          }
         } else {
           setPopupTitle("Login Failed");
-          setPopupContent(data.message);
+          setPopupContent("Sorry, username or password doesn't match");
           togglePopup();
         }
       })

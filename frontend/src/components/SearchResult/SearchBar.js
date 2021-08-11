@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const SearchBar = (props) => {
-  const { setPopupTitle, setPopupContent, togglePopup } = props;
+  const { setPopupTitle, setPopupContent, togglePopup, isPopupOpen } = props;
   const [title, setTitle] = useState("");
 
   const onClickSearch = () => {
@@ -10,7 +10,9 @@ const SearchBar = (props) => {
       setPopupContent("Please enter the title you want to search");
       togglePopup();
     } else {
-      window.location.pathname = `/search/${title}`;
+      if (!isPopupOpen) {
+        window.location.pathname = `/search/${title}`;
+      }
     }
   };
   return (

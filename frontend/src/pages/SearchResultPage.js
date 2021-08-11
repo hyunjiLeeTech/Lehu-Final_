@@ -6,7 +6,12 @@ import Header from "../components/General/Header";
 import SearchResult from "../components/SearchResult/SearchResult";
 import Loading from "../components/General/Loading";
 
-const SearchResultPage = ({ setPopupTitle, setPopupContent, togglePopup }) => {
+const SearchResultPage = ({
+  setPopupTitle,
+  setPopupContent,
+  togglePopup,
+  isPopupOpen,
+}) => {
   const { title } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [videos, setVideos] = useState([]);

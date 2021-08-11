@@ -6,7 +6,12 @@ import Title from "../General/Title";
 import "./Registration.css";
 import "./Button.css";
 
-const Registration = ({ setPopupTitle, setPopupContent, togglePopup }) => {
+const Registration = ({
+  setPopupTitle,
+  setPopupContent,
+  togglePopup,
+  isPopupOpen,
+}) => {
   const [user, setUser] = useState({
     firstName: "",
     lastName: "",
@@ -47,7 +52,9 @@ const Registration = ({ setPopupTitle, setPopupContent, togglePopup }) => {
             setPopupTitle("Registration Success");
             setPopupContent(`Welcome! Your account is successfully added!`);
             togglePopup();
-            window.location.pathname = "/login";
+            if (!isPopupOpen) {
+              window.location.pathname = "/login";
+            }
           } else {
             setPopupTitle("Registration Failed");
             setPopupContent(data.message);

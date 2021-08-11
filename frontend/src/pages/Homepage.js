@@ -5,7 +5,12 @@ import Header from "../components/General/Header";
 import Footer from "../components/General/Footer";
 import Loading from "../components/General/Loading";
 
-const HomePage = ({ setPopupTitle, setPopupContent, togglePopup }) => {
+const HomePage = ({
+  setPopupTitle,
+  setPopupContent,
+  togglePopup,
+  isPopupOpen,
+}) => {
   const [featuredMovies, setFeaturedMovies] = useState([]);
   const [featuredShows, setFeaturedShows] = useState([]);
   const [isLoadingMovie, setIsLoadingMovie] = useState(true);
@@ -43,6 +48,7 @@ const HomePage = ({ setPopupTitle, setPopupContent, togglePopup }) => {
           setPopupTitle={setPopupTitle}
           setPopupContent={setPopupContent}
           togglePopup={togglePopup}
+          isPopupOpen={isPopupOpen}
         />
       )}
       <Footer />
